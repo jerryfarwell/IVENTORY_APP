@@ -1,0 +1,29 @@
+<br>
+<h1>Item details </h1><br><br>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">QUANTITY</th>
+      <th scope="col">BRAND</th>
+      <th scope="col">SOLD OUT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= @item.id %></th>
+      <td><%= @item.name %></td>
+      <td><%= @item.price %></td>
+      <td><%= @item.quantity %></td>
+      <td><%= @item.brand %></td>
+      <td><%= @item.sold_out %></td>
+    </tr>
+  </tbody>
+</table>	
+
+<a href="<%= edit_item_path(@item.id) %>" class="btn btn-info">Edit this item</a><br><br>
+<%= button_to "Delete item", item_path(@item.id), method: :delete, class: "btn btn-danger" %><br>
+<a href="<%= items_path %>" class="btn btn-info">Back to items</a><br><br>

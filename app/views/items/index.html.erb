@@ -1,0 +1,26 @@
+  <% if user_signed_in?%>
+<div class = "logoutbtn"><%= button_to "deconnexion", destroy_user_session_path, method: :delete %></div>
+<% else %>
+  <a href="<%= new_user_session_path %>"><button type="button" class="btn btn-secondary">Connexion</button></a>
+  <% end %>
+
+<h1>AVAILABLE ITEMS</h1>
+
+<table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">ITEMS NAMES</th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @item.each do |item| %><br>
+
+    <tr>
+      <th scope="row"><%= item.id %></th>
+      <td><%= item.name %></td>
+      <td><%= link_to "voir les détails", item_path(item.id)%> </td>
+    </tr>
+  </tbody>
+  <% end %>
+</table><br>

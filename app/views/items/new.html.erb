@@ -1,0 +1,17 @@
+<div class="items">
+    <%= form_tag(items_path, method: :post, class: "form") do %>
+	        <label for="name">name :<br>
+	        <%= text_field_tag  :name %><br><br>
+
+	        <label for="price">price :<br>
+	        <%= text_field_tag  :price %><br><br>
+	
+	        <label for="quantity">quantity : <br>
+	        <%= number_field_tag  :quantity %><br><br>
+	
+	       <label for="brand">brand :<br>
+	        <%= text_field_tag  :brand %><br><br>
+	
+	        <%= submit_tag 'create', :name => 'commit'%>
+	      <% end %>
+</div>
